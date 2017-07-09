@@ -49,25 +49,26 @@ app.controller('MainController', ['$scope', function($scope) {
 
   
 
-  //when we click on a film
+//when we click on a serie
 $scope.selectMe = function ($event, shows){
+  //we remove the overflow to let the cover go outside the white box
   $('section').removeClass('scrollable');
   $('section').addClass('block');
 
 
-  //we remove the overflow to let the cover go outside the white box
-  
-
+  //we remove the nav and the other element to get a white background , nav is in "visibility hidden" to keep the space
   $('.vignette_film').addClass('hidden');
   $('nav').addClass('hidden');
+  $('nav').removeClass('block');
   // $('nav').addClass('red');
-  //we remove the nav and the other element to get a white background , nav is in "visibility hidden" to keep the space
-
-  $(event.target).closest('.vignette_film').addClass('block');
+  
   //we keep the element clicked visible
-
-  $(event.target).closest('div').addClass('active');
+  $(event.target).closest('.vignette_film').addClass('block');
+  
   //and put the "active" class on it to restylize it
+  $(event.target).closest('div').addClass('active');
+  
+  $('.close').addClass('block');
 
 
 
@@ -81,34 +82,23 @@ $scope.selectMe = function ($event, shows){
 
 
 
-    //when we click on the cross
-  $scope.closeMe = function (event, shows){
+//when we click on the cross /!\ the croos DOES NOT be on the vignette_film
+$scope.closeMe = function (event, shows){
 
     //we add the class to make visible again the hidden elements due by the previous click
-    // $('section').addClass('scrollable');
-    // $('section').removeClass('red');
-    console.log("hello");
+    $('section').addClass('scrollable');
+    $('section').removeClass('block');
 
     
-    //we remove the nav and the other element to get a white background , nav is in "visibility hidden" to keep the space
-    // $('nav.hidden').addClass('block');
-    // $('.vignette_film').removeClass("hidden");
-    $("nav").attr("class", "prout");
-
     //we remove the active class to put again its first style
-    // $('.vignette_film').removeClass('hidden');
-    // $('.vignette_film').addClass("red");
-    
-
-    //we keep the element clicked visible
     //we let the hidden elements be visible again
-    //we remove the block class to the clicked element to make it like the first time we open the webpage
-    // $('.vignette_film').removeClass('hidden');
-    // $('.vignette_film').removeClass('block');
-  
+    //we remove the block, hidden and active class to all the "vignette_film" element to make it like the first time we open the webpage
+    $('nav').addClass('block');
+    $('nav').removeClass('hidden');
+    $('.vignette_film').removeClass("hidden block active");
 
+    $('.close').removeClass('block');
   }
-
 
 }]);
 

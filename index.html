@@ -7,7 +7,7 @@
 		<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1">
 		<meta charset="UTF-8" />
 		<link rel="stylesheet" href="_styles/style.css" />
-		<link rel="shortcut icon" type="image/x-icon" href="" />
+		<link rel="shortcut icon" type="image/x-icon" href="_images/favicon.ico" />
 
 <!-- ANGULAR 1.6 -->
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
@@ -17,7 +17,9 @@
     <div ng-app="myApp">
     <div class="container" ng-controller="MainController">
       <!-- ng-style="{'background-color': mainShow.background}" to change de color of the background-->
+      
       <section class="scrollable">
+        <a href="#" class="close hidden" ng-click='closeMe($event)'>close</a>
         <nav>
           <ul>
             <li><a href="#" class="menu">menu</a></li>
@@ -30,14 +32,13 @@
           <div class="content_all">
             <div class="vignette_film" ng-repeat="show in shows" ng-click="selectMe($event); mainShow.background = show;" >
               
-              <img ng-src="{{ show.cover }}" alt="cover du film"><!-- clicked  ng-click="openMyShow()" -->
+              <img ng-src="{{ show.cover }}" alt="cover du film">
               <h2>
-                <!--test to change the color inside the loop ng-repeat ng-style="{'background-color': show.backgroundBody}" -->
+                <!--test on the h2 to change the color inside the loop ng-repeat ng-style="{'background-color': show.backgroundBody}" -->
                 {{ show.name }}</h2>
               <span>{{ show.episodes | number }} episodes</span>
 
               <div class="content-area">
-                <a href="#" class="close" ng-click='closeMe($event)'>close</a>
                 <h2>{{ show.name }}</h2>
                 <span>{{ show.episodes | number }} episodes</span>
                 <p>{{ show.synopsis }}</p>
