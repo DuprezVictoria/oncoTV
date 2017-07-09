@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="214px" height="59px" viewBox="0 0 214 59" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 43.2 (39069) - http://www.bohemiancoding.com/sketch -->
+    <title>Group</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Group" transform="translate(-3.000000, -2.000000)">
+            <rect id="Rectangle" fill="#FF7474" x="132" y="2" width="85" height="59" rx="29.5"></rect>
+            <text id="ONCO-TV" font-family="Roboto-Medium, Roboto" font-size="48" font-weight="400">
+                <tspan x="1.12890625" y="50" fill="#494949">ONCO </tspan>
+                <tspan x="143.253906" y="50" fill="#FFFFFF">TV</tspan>
+            </text>
+        </g>
+    </g>
+</svg>

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="fr">
+	<head>
+		<title>Onco TV | Victoria Duprez</title>
+		<meta name="description" content="">
+
+		<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1">
+		<meta charset="UTF-8" />
+		<link rel="stylesheet" href="_styles/style.css" />
+		<link rel="shortcut icon" type="image/x-icon" href="" />
+
+<!-- ANGULAR 1.6 -->
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular-animate.js"></script>
+	</head>
+	<body>
+    <div ng-app="myApp">
+    <div class="container" ng-controller="MainController">
+      <!-- ng-style="{'background-color': mainShow.background}" to change de color of the background-->
+      <section class="scrollable">
+        <nav>
+          <ul>
+            <li><a href="#" class="menu">menu</a></li>
+            <li><a href="#" class="logo">Onco tv<img src="_images/oncotv.svg" alt="Onco TV"></a></li>
+            <li><a href="#" class="search">search</a></li>
+          </ul>
+        </nav>
+        <div class="gallery">
+          <h1>{{ title }}</h1>
+          <div class="content_all">
+            <div class="vignette_film" ng-repeat="show in shows" ng-click="selectMe($event); mainShow.background = show;" >
+              
+              <img ng-src="{{ show.cover }}" alt="cover du film"><!-- clicked  ng-click="openMyShow()" -->
+              <h2>
+                <!--test to change the color inside the loop ng-repeat ng-style="{'background-color': show.backgroundBody}" -->
+                {{ show.name }}</h2>
+              <span>{{ show.episodes | number }} episodes</span>
+
+              <div class="content-area">
+                <a href="#" class="close" ng-click='closeMe($event)'>close</a>
+                <h2>{{ show.name }}</h2>
+                <span>{{ show.episodes | number }} episodes</span>
+                <p>{{ show.synopsis }}</p>
+                <a href="{{ show.ytLink }}" target="_blank" class="playMovie">Play movie</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div><!-- fin maincontroller-->
+  </div><!-- fin myApp -->
+    <!-- Modules -->
+    <script src="_js/app.js"></script>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular-animate.js"></script>
+    <script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
+
+    <!-- Controllers -->
+    <script src="_js/controllers/MainController.js"></script>
+	</body>
+</html>
